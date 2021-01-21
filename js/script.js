@@ -27,53 +27,60 @@
 // console.log(square, length);
 
 /* ----------Задание №2---------- */
-// let eggsCount = prompt('Сколько яиц нужно сварить');
-// let time = 0;
-// let zakaz = function (eggsCount, time) {
-//   if(eggsCount > 0) {
-//     for(let i = 0; i < Math.ceil(eggsCount / 8); i++) {
-//       if(eggsCount > 0) {
-//         time += 5;
-//       }
+// let Elevator = {
+//   floor: 1,
+//   printFloor() {
+//     console.log('Elevator is on the floor ' + this.floor);
+//   },
+//   upOneFloor() {
+//     if(this.floor < 16) {
+//       this.floor++;
+//       this.printFloor();
+//     } else {
+//       console.log('Выше нельзя');
 //     }
-//   }
-//   if(eggsCount === null) {
-//     return 'Вы отменили ввод.'
-//   }
-//   if(isNaN(eggsCount) || eggsCount === '') {
-//     return 'Введите корректные данные';
-//   } else {
-//     return `Для варки ${eggsCount} яиц нужно ${time} минут`;
-//   }
-
-// }
-// let result = zakaz(eggsCount, time);
-
-// console.log(result);
-
+//   },
+//   downOneFloor() {
+//     if(this.floor > 1) {
+//       this.floor--;
+//       this.printFloor();
+//     } else {
+//       console.log('Ниже нельзя');
+//     }
+//   },
+//   toFloor(num) {}
+// };
+// Elevator.upOneFloor();
+// Elevator.downOneFloor();
 
 /* ----------Задание №3---------- */
-// let odd = [0];
-// let even = [0];
-// let getEvenSum = function (...arguments) {
-//   for (let nums in arguments) {
-//     arguments[nums] / 2
-//   }
-// }
-
-// let result = getEvenSum(4, 3, 1, 2, 5, 10, 6, 7, 8);
-// console.log(result);
-
-/* ----------Задание №4---------- */
-// let checkExam = function (reshenie, otvet) {
-//   if(reshenie === '' || otvet === '') {
-//     return 'Введите корректные данные';
-//   } else {
-//     for(let i = 0; i < reshenie.length + otvet.length; i++) {
-//       console.log( `Текущий результат ${otvet}`);
-//     }
-//   }
-// }
-
-// let result = checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]);
-// console.log(result);
+let initialList = [
+  'John',
+  'Jack',
+  'Harry',
+  'Merry',
+  'Sam',
+  'Violet',
+  'Jimmy'
+];
+let called = [``];
+let notCalled = [``];
+let Host = {
+  setGuestList(initialList) {
+    for(let guest in initialList) {
+      let chance = Math.floor( Math.random() * (80 - 1));
+      if(chance <= 20) {
+        called += initialList[guest];
+      } else {
+        notCalled += initialList[guest];
+      }
+    }
+  },
+  guestList(called) {
+    for(let calls in called) {
+      return `В списке было ${initialList.length} имён.\nПосле сортировки осталось ${calls}`;
+    }
+  }
+};
+Host.setGuestList(initialList);
+console.log(Host.guestList(called));
