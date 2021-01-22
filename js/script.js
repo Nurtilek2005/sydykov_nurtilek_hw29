@@ -54,33 +54,32 @@
 // Elevator.downOneFloor();
 
 /* ----------Задание №3---------- */
-let initialList = [
-  'John',
-  'Jack',
-  'Harry',
-  'Merry',
-  'Sam',
-  'Violet',
-  'Jimmy'
-];
-let called = [``];
-let notCalled = [``];
-let Host = {
-  setGuestList(initialList) {
-    for(let guest in initialList) {
-      let chance = Math.floor( Math.random() * (80 - 1));
-      if(chance <= 20) {
-        called += initialList[guest];
-      } else {
-        notCalled += initialList[guest];
-      }
-    }
-  },
-  guestList(called) {
-    for(let calls in called) {
-      return `В списке было ${initialList.length} имён.\nПосле сортировки осталось ${calls}`;
-    }
-  }
-};
-Host.setGuestList(initialList);
-console.log(Host.guestList(called));
+// let initialList = [
+//   'John',
+//   'Jack',
+//   'Harry',
+//   'Merry',
+//   'Sam',
+//   'Violet',
+//   'Jimmy'
+// ];
+// let called = [];
+// let notCalled = [];
+// let Host = {
+//   setGuestList(initialList) {
+//     let chance = function (min, max){
+//       return Math.floor(Math.random() * (max - min + 1)) + min;
+//     }
+//     for(let guest of initialList) {
+//       if(chance(1, 100) <= 20){
+//         called.push(guest);
+//       } else {
+//         notCalled.push(guest)
+//       }
+//     }
+
+//     console.log(`В списке было: ${initialList.length} имен.\nПосле сортировки, осталось ${called.length} имени.\nГости которые приглашены на вечеринку: ${called}\nГости которые не приглашены на вечеринку: ${notCalled}`);
+//   }
+// };
+// Host.setGuestList(initialList);
+// console.log(called)
